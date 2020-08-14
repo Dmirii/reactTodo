@@ -2,7 +2,6 @@ import React from 'react';
 import TodoList from './todo/TodoList';
 import Context from './context';
 import './App.css';
-//import AddTodo from './todo/AddTodo';
 import Modal from './Modal/modal'
 import {useEffect} from 'react';
 import Loader from './Loader'
@@ -63,9 +62,12 @@ function addTodo(title) {
  }
 
   return (
+
     // используем контекст реакта для передачи метода от родителя любому компоненту напрямую
     <Context.Provider value={{removeTodo: removeTodo}}>
+      
     <div className="App wrapper">
+   
       <h1> Todo list:</h1>
       <Modal/>
       <React.Suspense fallback={<p> component loading... </p>}>
